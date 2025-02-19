@@ -56,9 +56,12 @@ python -m flask run
 The application will start locally at `http://127.0.0.1:5000/`.
 
 ### Fetching and Analyzing YouTube Comments
-1. Enter a **YouTube Video URL** in the input field.
-2. Click **Submit** to fetch comments.
-3. View the **sentiment analysis results**.
+1. Select the Search by Channel tab or Search by Video Tab
+2. In order to search by channel, input the channel name and then select the number of videos to analyze
+3. In order to search by video, input the video url.
+4. Select at least one data visualization format.
+5. Click **Submit** to fetch comments.
+6. View the **sentiment analysis results**.
 
 ## Roadmap
 - [ ] Improve sentiment analysis accuracy with deep learning models
