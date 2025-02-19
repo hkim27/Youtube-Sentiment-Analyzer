@@ -41,7 +41,7 @@ pip install wordcloud
 pip install scipy
 pip install matplotlib
 pip install vadersentiment
-**Add --user if you get permission related error**
+Add --user if you get permission related error
 ```
 
 
