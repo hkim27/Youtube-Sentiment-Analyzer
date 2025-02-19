@@ -17,6 +17,18 @@ Ensure you have the following installed on your system:
 - **pip** (Python package manager)
 - **Git**
 
+Also, make sure you pip install:
+- **pip install flask**
+- **pip install beautifulsoup4**
+- **pip install selenium**
+- **pip install ntlk**
+- **pip install lxml**
+- **pip install wordcloud**
+- **pip install scipy**
+- **pip install matplotlib**
+- **pip install vadersentiment**
+- **Add --user if you get permission related error**
+
 ### Clone the Repository
 ```sh
 git clone https://github.com/hkim27/Youtube-Sentiment-Analyzer.git
@@ -39,7 +51,7 @@ pip install -r requirements.txt
 
 ### Running the Flask Application
 ```sh
-python app.py
+python -m flask run
 ```
 The application will start locally at `http://127.0.0.1:5000/`.
 
@@ -47,14 +59,6 @@ The application will start locally at `http://127.0.0.1:5000/`.
 1. Enter a **YouTube Video URL** in the input field.
 2. Click **Submit** to fetch comments.
 3. View the **sentiment analysis results**.
-
-## Troubleshooting
-If you encounter errors related to missing NLTK resources, run:
-```sh
-import nltk
-nltk.download('stopwords')
-nltk.download('punkt')
-```
 
 ## Roadmap
 - [ ] Improve sentiment analysis accuracy with deep learning models
