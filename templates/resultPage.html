@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+    <form action="/download" method="POST">
+        <head>
+            <title>ytSentimentAnalyzer</title>
+            <link rel="stylesheet" type="text/css" href="{{url_for('static', filename ='website.css')}}">
+        </head>
+
+        <body> 
+
+            <h1>Sentiment Analysis Tool Results</h1>
+            <h2>Presented by The Tech Titans</h2>
+
+            <div class="gSelectionSquare">
+
+                <p style="text-align: center; color:#FCECC9; font-size:20px">Output Results</p>
+                <p id="graphSelect2">
+                    <label class="container">
+                        <img src="{{url_for('static', filename='/resultpageimgs/pie_chart.png')}}">
+                        <label> Pie Graph </label>
+                    </label>
+
+                    <label class="container">
+                        <img src="{{url_for('static', filename='/resultpageimgs/circle_chart.png')}}">
+                        <label> Circle Chart </label>
+                    </label>
+
+                    <label class="container">
+                        <img src="{{url_for('static', filename='/resultpageimgs/histogram.png')}}">
+                        <label> Histogram </label>
+                    </label>
+
+                    <label class="container">
+                        <img src="{{url_for('static', filename='/resultpageimgs/density_plot.png')}}">
+                        <label> Density </label>
+                    </label>
+
+                    <label class="container">
+                        <img src="{{url_for('static', filename='/resultpageimgs/line_chart.png')}}">
+                        <label> Line Chart </label>
+                    </label>
+
+                    <label class="container">
+                        <img src="{{url_for('static', filename='/resultpageimgs/scatter_plot.png')}}">
+                        <label> Scatterplot </label>
+                    </label>
+
+                    <label class="container">
+                        <img src="{{url_for('static', filename='/resultpageimgs/word_cloud.png')}}">
+                        <label> Wordcloud </label>
+                    </label>
+
+                    <label class="container">
+                        <img src="{{url_for('static', filename='/resultpageimgs/box_plot.png')}}">
+                        <label> Boxplot </label>
+                    </label>
+                </p>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="submitClass">
+                <button id="submitSelect" name = "action" value= "Download" onclick = "alert('Your plots have been downloaded!')">Export as PNG</button>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class="submitClass">
+                <button id="submitSelect" name = "action" value = "Home">Run Again</button>
+            </div>
+            
+        </body>
+    </form>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+  <form action="/submit" method="POST">
+    <head>
+      <title>ytSentimentAnalyzer</title>
+      <link rel="stylesheet" type="text/css" href="{{url_for('static', filename ='website.css')}}">
+    </head>
+    <body>
+
+      <h2>Sentiment Analysis Tool</h2>
+      <h2>Presented by The Tech Titans</h2>
+      <div id="loading" >
+        <label id="loading-text"> Analysis in progress, you will be redirected to your results shortly </label>
+      </div>
+
+      <div class = "content">
+        {% for message in get_flashed_messages() %}
+          <div class = "alert">{{message}}</div>
+        {% endfor %}
+        {% block content %}{% endblock %}
+      </div>
+
+      <div class="warpper">
+        <input class="radio" id="one" name="group" type="radio" value="c" checked>
+        <input class="radio" id="two" name="group" type="radio" value="v">
+        <div class="tabs">
+          <container class="tooltip">
+        <label class="tab" id="one-tab" for="one">Search By Channel</label>
+          <span class="tooltiptext">Select to search by channel name</span>
+        </container>
+        <container class="tooltip">
+        <label class="tab" id="two-tab" for="two">Search By Video</label>
+        <span class="tooltiptext">Select to search by video URL</span>
+        </container>
+        </div>
+        <div class="panels">
+        <div class="panel" id="one-panel">
+          <div class="panel-title" style="text-align: center; color:#FCECC9">Insert channel name in the box below</div>
+            <p id="channelSelect" style="text-align: center; color:#FCECC9">
+            <label for="cName">Channel Name:</label>
+            <container class="tooltip">
+            <input style="text-align: center;"type="text" id="cName" name="cName" placeholder="Insert Channel Name" value = "{{request.form['cName']}}"></input><br>
+            <span class="tooltiptext">Enter channel name</span>
+            </container>
+            <label for="nVideos" id="nVideos">Number of Videos: </label> <br>
+            <container class="tooltip">
+              <span class="tooltiptext">Select number of videos</span>
+              <select name="nVideos" id="nVideos">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              </p>
+            </container>
+        </div>
+
+        <div class="panel" id="two-panel">
+          <div class="panel-title" style="text-align: center;color:#FCECC9;">Insert video URL into the box below</div>
+            <p id="videoSelect" style="text-align: center; color:#FCECC9">
+            <label for="vURL">Video URL:</label><br>
+            <container class="tooltip">
+            <input style = "text-align: center;" type="text" id="vURL" name="vURL" placeholder="Insert Video URL" value = "{{request.form['vURL']}}"></input><br>
+            <span class="tooltiptext">Enter video URL</span>
+            </container>
+          </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="gSelectionSquare">
+
+        <p style="text-align: center; color:#FCECC9; font-size:20px">Select Data Visualization Format</p>
+        <p id="graphSelect1">
+        <label class="container">
+          <container class="tooltip">
+            <img src="{{url_for('static', filename='/homepageimgs/PieGraph.png')}}">
+            <span class="tooltiptext">Check for Pie Graph in output</span>
+            <input type="checkbox" name="pieGraph">Pie Graph
+            <span class="checkmark"></span>
+          </container>
+        </label>
+        
+        <label class="container">
+          <container class="tooltip">
+            <img src="{{url_for('static', filename='/homepageimgs/CircleChart.jpg')}}">
+            <span class="tooltiptext">Check for Circle Graph in output</span>
+            <input type="checkbox" name="circleChart">Circle Chart
+            <span class="checkmark"></span>
+          </container>
+        </label>
+        
+        <label class="container">
+          <container class="tooltip">
+            <img src="{{url_for('static', filename='/homepageimgs/Histogram.png')}}">
+            <span class="tooltiptext">Check for Histogram in output</span>
+            <input type="checkbox" name="histogram">Histogram
+            <span class="checkmark"></span>
+          </container>
+        </label>
+        
+        <label class="container">
+          <container class="tooltip">
+            <img src="{{url_for('static', filename='/homepageimgs/Density.png')}}">
+            <span class="tooltiptext">Check for Density Graph in output</span>
+            <input type="checkbox" name="density">Density
+            <span class="checkmark"></span>
+          </container>
+        </label>
+      
+        <label class="container">
+          <container class="tooltip">
+            <img src="{{url_for('static', filename='/homepageimgs/LineChart.png')}}">
+            <span class="tooltiptext">Check for Line Chart in output</span>
+            <input type="checkbox" name="lineChart">Line Chart
+            <span class="checkmark"></span>
+          </container>
+        </label>
+        
+        <label class="container">
+          <container class="tooltip">
+            <img src="{{url_for('static', filename='/homepageimgs/Scatterplot.png')}}">
+            <span class="tooltiptext">Check for Scatter Plot in output</span>
+            <input type="checkbox" name="scatterplot">Scatterplot
+            <span class="checkmark"></span>
+        </container>
+        </label>
+        
+        <label class="container">
+          <container class="tooltip">
+            <img src="{{url_for('static', filename='/homepageimgs/WordCloud.png')}}">
+            <span class="tooltiptext">Check for Word Cloud in output</span>
+            <input type="checkbox" name="wordcloud">Wordcloud
+            <span class="checkmark"></span>
+        </container>
+        </label>
+        
+        <label class="container">
+          <container class="tooltip">
+            <img src="{{url_for('static', filename='/homepageimgs/Boxplot.jpg')}}">
+            <span class="tooltiptext">Check for Box Plot in output</span>
+            <input type="checkbox" name="boxplot">Boxplot
+            <span class="checkmark"></span>
+        </container>
+        </label>
+        </p>
+
+      </div>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="submitClass">
+        <label>
+          <container class="tooltip">
+            <span class="tooltiptext">Select to submit the data</span>
+            <!-- <button id="submitSelect"> <a href="/submit">Submit</a></button> -->
+            <form action ="/" method = "post">
+            <input id="submitSelect" type="submit" onclick ="return showloading();"> </button>
+            </form>
+            <script>
+              function showloading(){
+                var button = document.getElementById('submitSelect');
+                button.value = 'Analyzing...';
+              }
+            </script>
+          </container>
+        </label>
+      </div>
+    </body>
+  </form>
+</html>
