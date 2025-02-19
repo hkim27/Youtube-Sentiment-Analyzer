@@ -107,6 +107,14 @@ def submit():
         
         # Call visualizer
         graph_data(options, "analysisResults.txt", "static/resultpageimgs/")
+        
+        # Delete the temporary files
+        try:
+            os.remove("rawComments.txt")
+            os.remove("analysisResults.txt")
+        except OSError as e:
+            print(f"Error deleting files: {e}")
+
         return render_template('resultPage.html')
 
 @app.route('/download', methods=['GET', 'POST'])
