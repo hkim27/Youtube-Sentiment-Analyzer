@@ -17,18 +17,6 @@ Ensure you have the following installed on your system:
 - **pip** (Python package manager)
 - **Git**
 
-Also, make sure you pip install:
-- **pip install flask**
-- **pip install beautifulsoup4**
-- **pip install selenium**
-- **pip install ntlk**
-- **pip install lxml**
-- **pip install wordcloud**
-- **pip install scipy**
-- **pip install matplotlib**
-- **pip install vadersentiment**
-- **Add --user if you get permission related error**
-
 ### Clone the Repository
 ```sh
 git clone https://github.com/hkim27/Youtube-Sentiment-Analyzer.git
@@ -53,8 +41,9 @@ pip install wordcloud
 pip install scipy
 pip install matplotlib
 pip install vadersentiment
-```
 **Add --user if you get permission related error**
+```
+
 
 ## Usage
 
