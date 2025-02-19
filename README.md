@@ -44,8 +44,17 @@ venv\Scripts\activate  # On Windows
 
 ### Install Dependencies
 ```sh
-pip install -r requirements.txt
+pip install flask
+pip install beautifulsoup4
+pip install selenium
+pip install ntlk
+pip install lxml
+pip install wordcloud
+pip install scipy
+pip install matplotlib
+pip install vadersentiment
 ```
+**Add --user if you get permission related error**
 
 ## Usage
 
